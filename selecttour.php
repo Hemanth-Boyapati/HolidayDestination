@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 error_reporting(0);
@@ -8,7 +6,7 @@ include('includes/config.php');
 <DOCTYPE HTML>
     <html>
         <head>
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>Selecting tour</title>
         </head>
         <body>
@@ -17,44 +15,126 @@ include('includes/config.php');
         <?php include('includes/navbar.php');?>
       
             </div>
-            
-            <div class="w-full px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-        Hotel
-      </label>
-      <div class="relative">
-        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-          <option>Hotel 1</option>
-          <option>Hotel 2</option>
-          <option>Hotel 3</option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-        </div>
-      </div>
-    </div>
-    
-    <div class="w-full px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-      vehicle
-      </label>
-      <div class="relative">
-        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-          <option>Hotel 1</option>
-          <option>Hotel 2</option>
-          <option>Hotel 3</option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-        </div>
-      </div>
+            <?php $package_id=$_POST['package_id'];
+            $sql="SELECT * FROM package where package_id=$package_id";
+$query = $dbh->prepare($sql);
+$query->execute();
+$result=$query->fetch(PDO::FETCH_OBJ);
+?>
+<h1>Itinerary:-</h1>
+ <?php
 
-      <div class="w-full px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-        Name
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
-      <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-    </div>     
+// echo ($result->Location_id);
+
+ $sql1="SELECT * from place where place.Location_id=$result->Location_id ";
+$query1 = $dbh->prepare($sql1);
+$query1->execute();
+$results1=$query1->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+$numdays=1;
+if($query1->rowCount() > 0)
+{
+foreach($results1 as $result1)
+{	?>
+
+
+
+
+
+<h1>Day <?php echo $numdays?></h1>
+<?php $numdays=$numdays+1?>
+<?php
+$sql3="SELECT * from tourist_spot where tourist_spot.Place_id=$result1->Place_id";
+$query3 = $dbh->prepare($sql3);
+$query3->execute();
+$results3=$query3->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query3->rowCount() > 0)
+{
+foreach($results3 as $result3)
+{	?>
+
+<?php echo htmlentities($result3->Name);?><br>
+<?php echo htmlentities($result3->Description);?><br>
+<?php }} ?>
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+$sql2="SELECT * from hotel where hotel.Place_id=$result1->Place_id";
+$query2 = $dbh->prepare($sql2);
+$query2->execute();
+$results2=$query2->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query2->rowCount() > 0)
+{
+foreach($results2 as $result2)
+{	?>
+<!-- 
+<?php echo htmlentities($result2->Place_id);?><br>
+<?php echo htmlentities($result2->Hotel_name);?><br>
+<?php echo htmlentities($result2->Hotel_Address);?><br> -->
+<?php }} ?>
+
+
+
+
+
+
+
+
+
+<?php }} ?>
+			
+<div>
+<form action="">
+  
+<fieldset>
+  <legend class="sr-only">Hotel Price Range</legend>
+
+  <div class="flex items-center mb-4">
+    <input id="hotel-option-3" type="radio" name="hotelrating" value="3" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked="">
+    <label for="hotel-option-3" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+      Low
+    </label>
+  </div>
+
+  <div class="flex items-center mb-4">
+    <input id="hotel-option-2" type="radio" name="hotelrating" value="2" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+    <label for="hotel-option-2" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+      Mid
+    </label>
+  </div>
+
+  <div class="flex items-center mb-4">
+    <input id="hotel-option-1" type="radio" name="hotelrating" value="1" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+    <label for="hotel-option-1" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+      High
+    </label>
+  </div>
+
+</fieldset>
+<label for="travellers" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Number of travellers</label>
+<select id="travellers" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+
+  <input type="submit" value="Submit">
+</form>
+</div>
+            
+
         </body>
     </html>
