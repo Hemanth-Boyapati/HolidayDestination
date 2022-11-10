@@ -117,8 +117,8 @@ $sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and Occupancy=$trave
 <?php }} ?>
 
 <div>
-    
-<form action="">
+<!--  -->
+<form action="print_itinerary.php" method="POST">
     <?php
     for($x=1;$x<=$travellers;$x++){?>
     <div class="">
