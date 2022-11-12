@@ -6,7 +6,8 @@ include('includes/config.php');
 <!DOCTYPE HTML>
 <html>
     <head>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>Tour Packages</title>
     </head>
     <body>
@@ -30,8 +31,9 @@ foreach($results as $result)
                     <div class="">
 					<h4 class="pz-5 text-black"><?php echo htmlentities($result->Name);?></h4>
 					<h6 class="pz-5 text-black"><?php echo htmlentities($result->Days);?>Days/<?php echo htmlentities($result->Days);?>Nights</h6>
-                    <a href="selecttour.php">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book</button>
+                    <form action="selecttour.php" method="POST">
+                    <input type="submit" name="package_id" value="<?php echo htmlentities($result->Package_id);?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                </form>
 </a>
 				</div>
 </div>
