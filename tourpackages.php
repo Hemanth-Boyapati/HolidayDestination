@@ -10,11 +10,11 @@ include('includes/config.php');
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>Tour Packages</title>
     </head>
-    <body>
+    <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink)">
         <div>
         <?php include('includes/navbar.php');?>
         </div>
-            <div class="grid 2sm:grid-cols-7 grid-cols-3 gap-2 mx-2 mb-2 mt-5">
+            <div style="padding-top: 30px; padding-left: 80px;" class="grid 2sm:grid-cols-7 grid-cols-3 gap-2 mx-2 mb-2 mt-5">
             <?php $sql = "SELECT * from package";
 $query = $dbh->prepare($sql);
 $query->execute();
@@ -24,11 +24,11 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {	?>
-			<div class="max-w-sm max-h-sm rounded border-black overflow-hidden shadow-lg justify-content">
+			<div  style="background-color: pink; " class="max-w-sm max-h-sm rounded border-black overflow-hidden shadow-lg justify-content">
                 <div>
 
 					<img class="max-h-sm" src="images/<?php echo htmlentities($result->Image);?>.jpg" class="img-responsive" alt=""/>
-                    <div class="">
+                    <div style="text-align: center" class="">
 					<h4 class="pz-5 text-black"><?php echo htmlentities($result->Name);?></h4>
 					<h6 class="pz-5 text-black"><?php echo htmlentities($result->Days);?>Days/<?php echo htmlentities($result->Days);?>Nights</h6>
                     <form action="selecttour.php" method="POST">
@@ -44,7 +44,5 @@ foreach($results as $result)
 
 <?php }} ?>
             </div>
-
-       
     </body>
 </html>

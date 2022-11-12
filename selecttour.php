@@ -9,7 +9,7 @@ include('includes/config.php');
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>Selecting tour</title>
         </head>
-        <body>
+        <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink)">
 
             <div>
         <?php include('includes/navbar.php');?>
@@ -21,7 +21,7 @@ $query = $dbh->prepare($sql);
 $query->execute();
 $result=$query->fetch(PDO::FETCH_OBJ);
 ?>
-<h1>Itinerary:-</h1>
+<!--<h1>Itinerary:-</h1>-->
  <?php
 
 // echo ($result->Location_id);
@@ -36,9 +36,6 @@ if($query1->rowCount() > 0)
 {
 foreach($results1 as $result1)
 {	?>
-
-
-
 
 
 <h1>Day <?php echo $numdays?></h1>
@@ -58,17 +55,6 @@ foreach($results3 as $result3)
 <?php echo htmlentities($result3->Description);?><br>
 <?php }} ?>
 
-
-
-
-
-
-
-
-
-
-
-
 <?php
 $sql2="SELECT * from hotel where hotel.Place_id=$result1->Place_id";
 $query2 = $dbh->prepare($sql2);
@@ -85,17 +71,10 @@ foreach($results2 as $result2)
 <?php echo htmlentities($result2->Hotel_Address);?><br> -->
 <?php }} ?>
 
-
-
-
-
-
-
-
-
 <?php }} ?>
 			<hr>
-<div class="mt-3">
+<!--            <div class="bg-image"></div>-->
+<div class="mt-3" style="position: absolute">
 <form action="addco-travellers.php" method="POST" >
   <label>Select the hotel price range:</label>
 <fieldset>
@@ -168,7 +147,24 @@ foreach($results2 as $result2)
   <input type="submit" name="package_id" value="<?php echo htmlentities($package_id);?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
 </form>
 </div>
-            
+<!--            <style>-->
+<!--                .bg-image {-->
+<!--                    /* The image used */-->
+<!--                    background-image: url("images/delhi.jpg");-->
+<!---->
+<!--                    /* Add the blur effect */-->
+<!--                    filter: blur(8px);-->
+<!--                    -webkit-filter: blur(8px);-->
+<!---->
+<!--                    /* Full height */-->
+<!--                    height: 100%;-->
+<!---->
+<!--                    /* Center and scale the image nicely */-->
+<!--                    background-position: center;-->
+<!--                    background-repeat: no-repeat;-->
+<!--                    background-size: cover;-->
+<!--                }-->
+<!--            </style>-->
 
         </body>
     </html>
