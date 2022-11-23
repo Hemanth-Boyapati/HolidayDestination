@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62fb68d5-4835-46c9-8989-f79471639550" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/addco-travellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/addco-travellers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/home_tour_packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/home_tour_packages.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selecttour.php" beforeDir="false" afterPath="$PROJECT_DIR$/selecttour.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tourpackages.php" beforeDir="false" afterPath="$PROJECT_DIR$/tourpackages.php" afterDir="false" />
@@ -45,7 +46,12 @@
       <option name="presentableId" value="Default" />
       <updated>1667923759208</updated>
       <workItem from="1667923766053" duration="3547000" />
-      <workItem from="1668226631545" duration="9538000" />
+      <workItem from="1668226631545" duration="10036000" />
+      <workItem from="1668615976178" duration="30000" />
+      <workItem from="1668841293579" duration="80000" />
+      <workItem from="1668860383246" duration="4722000" />
+      <workItem from="1669210325148" duration="751000" />
+      <workItem from="1669213643045" duration="1209000" />
     </task>
     <servers />
   </component>

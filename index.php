@@ -16,6 +16,7 @@ include('includes/config.php');
             <div>
                 <?php include('includes/carousel.php');?>
             </div>
+
         <div>
             <h1 class="heading">Our Available Packages</h1>
             <style>
