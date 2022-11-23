@@ -10,7 +10,7 @@ include('includes/config.php');
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>Tour Packages</title>
     </head>
-    <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink)">
+    <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink); padding-top: 10px">
         <div>
         <?php include('includes/navbar.php');?>
         </div>
@@ -24,13 +24,13 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {	?>
-			<div  style="background-color: pink; " class="max-w-sm max-h-sm rounded border-black overflow-hidden shadow-lg justify-content">
+			<div  style="background-color: pink;" class="max-w-sm max-h-sm rounded border-black overflow-hidden shadow-lg justify-content">
                 <div>
 
 					<img class="max-h-sm" src="images/<?php echo htmlentities($result->Image);?>.jpg" class="img-responsive" alt=""/>
                     <div style="text-align: center" class="">
-					<h4 class="pz-5 text-black"><?php echo htmlentities($result->Name);?></h4>
-					<h6 class="pz-5 text-black"><?php echo htmlentities($result->Days);?>Days/<?php echo htmlentities($result->Days);?>Nights</h6>
+					<h4 style="font-size: 30px;" class="pz-5 text-black"><?php echo htmlentities($result->Name);?></h4>
+					<h6 style="font-size: 15px" class="pz-5 text-black"><?php echo htmlentities($result->Days);?>Days/<?php echo htmlentities($result->Days);?>Nights</h6>
                     <form action="selecttour.php" method="POST">
                     <input type="submit" name="package_id" value="<?php echo htmlentities($result->Package_id);?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 </form>
@@ -44,5 +44,9 @@ foreach($results as $result)
 
 <?php }} ?>
             </div>
+        <div>
+            <?php include('includes/footer.php');?>
+        </div>
+        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     </body>
 </html>

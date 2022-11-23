@@ -13,13 +13,14 @@ include('includes/config.php');
     {
         foreach($results as $result)
         {	?>
-            <div class="max-w-sm max-h-sm rounded border-black overflow-hidden shadow-lg justify-content">
+            <div style="background-color: pink;" class="max-w-sm max-h-sm rounded border-black overflow-hidden shadow-lg justify-content">
                 <div>
 
                     <img class="max-h-sm" src="images/<?php echo htmlentities($result->Image);?>.jpg" class="img-responsive" alt=""/>
                     <div class="">
-                        <h4 class="pz-5 text-black"><?php echo htmlentities($result->Name);?></h4>
+                        <h4  " class="pz-5 text-black"><?php echo htmlentities($result->Name);?></h4>
                         <h6 class="pz-5 text-black"><?php echo htmlentities($result->Days);?>Days/<?php echo htmlentities($result->Days);?>Nights</h6>
+
                         <form action="selecttour.php" method="POST">
                             <input type="submit" name="package_id" value="<?php echo htmlentities($result->Package_id);?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         </form>

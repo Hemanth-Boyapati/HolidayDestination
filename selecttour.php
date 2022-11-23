@@ -9,7 +9,7 @@ include('includes/config.php');
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>Selecting tour</title>
         </head>
-        <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink)">
+        <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink);">
 
             <div>
         <?php include('includes/navbar.php');?>
@@ -65,16 +65,18 @@ if($query2->rowCount() > 0)
 {
 foreach($results2 as $result2)
 {	?>
-<!-- 
+<!--
 <?php echo htmlentities($result2->Place_id);?><br>
 <?php echo htmlentities($result2->Hotel_name);?><br>
 <?php echo htmlentities($result2->Hotel_Address);?><br> -->
 <?php }} ?>
 
 <?php }} ?>
+            <br>
 			<hr>
+            <br>
 <!--            <div class="bg-image"></div>-->
-<div class="mt-3" style="position: absolute">
+<div class="mt-3" style="position: absolute; padding-left: 30px">
 <form action="addco-travellers.php" method="POST" >
   <label>Select the hotel price range:</label>
 <fieldset>
