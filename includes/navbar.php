@@ -1,6 +1,6 @@
 
 
-<nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+<nav  style="background-color:#ffba63;padding-bottom: 20px" class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
   <div class="container flex flex-wrap justify-between items-center mx-auto">
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">The Holiday Destination</span>
     </a>
@@ -23,3 +23,4 @@
     </div>
   </div>
 </nav>
+<hr>

@@ -9,7 +9,7 @@ include('includes/config.php');
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>The Holiday Destination</title>
         </head>
-        <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink)">
+        <body style="">
             <div>
             <div>
         <?php include('includes/navbar.php');?>

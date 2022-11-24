@@ -10,10 +10,11 @@ include('includes/config.php');
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
             <title>Tour Packages</title>
     </head>
-    <body style="background-image: -webkit-repeating-radial-gradient(lightseagreen, powderblue, hotpink); padding-top: 10px">
+    <body >
         <div>
         <?php include('includes/navbar.php');?>
         </div>
+        <div style="padding-top: 10px">
             <div style="padding-top: 30px; padding-left: 80px;" class="grid 2sm:grid-cols-7 grid-cols-3 gap-2 mx-2 mb-2 mt-5">
             <?php $sql = "SELECT * from package";
 $query = $dbh->prepare($sql);
@@ -46,6 +47,7 @@ foreach($results as $result)
             </div>
         <div>
             <?php include('includes/footer.php');?>
+        </div>
         </div>
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     </body>
