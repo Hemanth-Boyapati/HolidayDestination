@@ -16,6 +16,7 @@ include('includes/config.php');
       
             </div>
             <div style="padding-left: 10px;padding-right: 10px" >
+                <p style="text-align: center" class="text-4xl font-black text-gray-900 dark:text-white">Booking</p>
             <?php $package_id=$_POST['package_id'];
             $sql="SELECT * FROM package where package_id=$package_id";
 $query = $dbh->prepare($sql);
@@ -184,7 +185,7 @@ foreach($results2 as $result2)
     <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Address</label>
     <input type="text" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
   </div>
-  <input type="submit" name="package_id" value="<?php echo htmlentities($package_id);?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  <input type="submit" name="package_id" value="<?php echo htmlentities($package_id);?>" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
 
 </form>
 
