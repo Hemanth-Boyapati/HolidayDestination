@@ -93,7 +93,7 @@ foreach($results2 as $result2)
                 <br>
                 <p class="max-w-lg text-2xl font-semibold leading-normal text-gray-900 dark:text-white">Package Details:</p>
                 <div>
-                    <p class="text-lg font-medium text-gray-900 dark:text-white">Duration:  <?php echo $numdays?> days</p>
+                    <p class="text-lg font-medium text-gray-900 dark:text-white">Duration:  <span class="text-lg font-medium text-gray-700 dark:text-white"><?php echo $numdays?> days</span></p>
                     <p class="text-lg font-medium text-gray-900 dark:text-white">Places to visit:</p>
                     <p class="text-lg font-medium text-gray-900 dark:text-white"><?php echo htmlentities($result3->Name);?></p>
                     <p class="text-lg font-medium text-gray-900 dark:text-white">Description:</p>
@@ -140,6 +140,7 @@ foreach($results2 as $result2)
   <option value="3">3</option>
   <option value="4">4</option>
 </select>
+
 <div>
 <label for="dateoftravel">Date of Travel</label>
 <!--<input type="date" id="dateoftravel" name="dateoftravel">-->
@@ -186,8 +187,11 @@ foreach($results2 as $result2)
   <input type="submit" name="package_id" value="<?php echo htmlentities($package_id);?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
 
 </form>
+
 </div>
+
             </div>
+
 <!--            <style>-->
 <!--                .bg-image {-->
 <!--                    /* The image used */-->
@@ -213,7 +217,12 @@ foreach($results2 as $result2)
 <!--                <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>-->
 <!--            </a>-->
 <!--            </div>-->
-
-
+<!--            <footer style="position: absolute ;width: 100%; bottom: 0px" class="bottom-0">-->
+<!--                --><?php //include('includes/footer.php');?>
+<!--            </footer>-->
+<!--            <footer style="position: absolute;width: 100%;">-->
+<!--                --><?php //include('includes/footer.php');?>
+<!--            </footer>-->
+</div>
         </body>
     </html>
