@@ -4,7 +4,7 @@ error_reporting(0);
 include('includes/config.php');
 ?>
 <div class="grid 2sm:grid-cols-7 grid-cols-3 gap-2 mx-2 mb-2 mt-5">
-    <?php $sql = "SELECT * from package limit 6";
+    <?php $sql = "SELECT * from package order by rand() limit 3";
     $query = $dbh->prepare($sql);
     $query->execute();
     $results=$query->fetchAll(PDO::FETCH_OBJ);
