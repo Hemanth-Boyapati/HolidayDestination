@@ -1,8 +1,5 @@
 <html>
-    <head>
+<head>
     <title>The Holiday Destination</title>
-    </head>
-    <body>
-        
-    </body>
+</head>
 </html>
