@@ -11,6 +11,7 @@ include('includes/config.php');
             <title>Tour Packages</title>
     </head>
     <body  >
+
         <div>
         <?php include('includes/navbar.php');?>
         </div>
