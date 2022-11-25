@@ -10,6 +10,7 @@ include('includes/config.php');
             <title>The Holiday Destination</title>
         </head>
         <body style="">
+
             <div>
             <div>
         <?php include('includes/navbar.php');?>
