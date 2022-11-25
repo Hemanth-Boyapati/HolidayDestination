@@ -1,10 +1,5 @@
 <html>
-    <head>
+<head>
     <title>The Holiday Destination</title>
-    </head>
-    <body>
-        <?php
-        
-        ?>
-    </body>
+</head>
 </html>
