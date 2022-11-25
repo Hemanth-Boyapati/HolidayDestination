@@ -23,9 +23,7 @@ $result=$query->fetch(PDO::FETCH_OBJ);
 ?>
 <h1>Itinerary:-</h1>
  <?php
-
 // echo ($result->Location_id);
-
  $sql1="SELECT * from place where Location_id=$result->Location_id order by Place_id LIMIT $result->Days  ";
 $query1 = $dbh->prepare($sql1);
 $query1->execute();
