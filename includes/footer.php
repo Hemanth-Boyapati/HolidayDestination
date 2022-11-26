@@ -12,7 +12,7 @@
                 <a href="https://www.freeprivacypolicy.com/live/f5b75911-eeb0-48a0-a55b-3c771b304602" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
             </li>
             <li>
-                <a href="https://www.freeprivacypolicy.com/live/f5b75911-eeb0-48a0-a55b-3c771b304602" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
+                <a href="./admin/index.php" class="mr-4 hover:underline md:mr-6 ">Admin</a>
             </li>
             <li>
                 <a href="contact.php" class="hover:underline">Contact</a>
