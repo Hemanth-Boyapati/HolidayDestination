@@ -13,6 +13,7 @@ include('includes/config.php');
 
             <div>
         <?php include('includes/navbar.php');?>
+                <br>
       
             </div>
             <div style="padding-left: 10px;padding-right: 10px" >
