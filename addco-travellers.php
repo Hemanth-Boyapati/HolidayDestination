@@ -12,12 +12,12 @@ include('includes/config.php');
         <body>
             <div>
         <?php include('includes/navbar.php');?>
-      
+
             </div>
-           
-            
-            <?php 
-             
+
+
+            <?php
+
             ?>
 
 <?php
@@ -39,7 +39,7 @@ include('includes/config.php');
             $travellers_int=(int)$travellers;
             $age_int=(int)$age;
             $olddate=$_POST['dateoftravel'];
-            $date = date("Y-m-d", strtotime($olddate));  
+            $date = date("Y-m-d", strtotime($olddate));
             // echo gettype($age_int);
             $gender=$_POST['gender'];
             $address=$_POST['address'];
@@ -79,7 +79,7 @@ if($query2->rowCount() > 0)
 foreach($results2 as $result2)
 {	?>
 <?php
-// echo ($result2->Place_name);
+ echo ($result2->Place_name);
 // echo ($result2->Place_id);
 // echo ($hotelrating);
 
@@ -117,7 +117,7 @@ $sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and Occupancy=$trave
 <?php }} ?>
 
   <!-- ... -->
- 
+
 <div class="w-full h-full bg-no-repeat bg-cover bg-center bg-opacity-25 " style="background-image: url('images/bg2.jpg');">
 
 
@@ -133,7 +133,7 @@ $sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and Occupancy=$trave
     </div>
     <div class="mb-6">
         <label for="age" class="block mb-2 text-xl italic text-stone-900 dark:text-gray-300">Age</label>
-        <input type="number" id="age" name="age<?php echo $x ?>" placeholder="Enter Age" required min="1" max="100" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> 
+        <input type="number" id="age" name="age<?php echo $x ?>" placeholder="Enter Age" required min="1" max="100" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     </div>
     <div class="mb-6 flex">
         <h3 class="mr-4 text-xl italic font-semibold text-stone-900 dark:text-white">Gender</h3>
@@ -150,7 +150,7 @@ $sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and Occupancy=$trave
     <?php }
     ?>
     </div>
-  
+
     <div class="mt-6  flex flex-col justify-center items-center">
         <input type="submit" name="booking_id" value="<?php echo htmlentities($result7->Booking_id);?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
     </div>
@@ -159,3 +159,15 @@ $sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and Occupancy=$trave
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
