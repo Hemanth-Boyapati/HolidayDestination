@@ -50,7 +50,7 @@ include('includes/config.php');
             $query->execute();
             $result=$query->fetch(PDO::FETCH_OBJ);
 
-            $sql1="SELECT * FROM vehicle where Location_id=($result->Location_id) order by Vehicle_id limit 1";
+            $sql1="SELECT * FROM vehicle where Location_id=($result->Location_id) and booking_status=0 order by Vehicle_id limit 1";
             $query1 = $dbh->prepare($sql1);
             $query1->execute();
             $result1=$query1->fetch(PDO::FETCH_OBJ);
@@ -91,7 +91,7 @@ $sql3="SELECT * FROM hotel where Place_id=$result2->Place_id and Hotel_rating=$h
             // echo ($result3->Hotel_name);
 // ?>
 <?php
-$sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and Occupancy=$travellers order by Room_id limit 1";
+$sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and booking_status = 0 and Occupancy=$travellers order by Room_id limit 1";
             $query4 = $dbh->prepare($sql4);
             $query4->execute();
             $result4=$query4->fetch(PDO::FETCH_OBJ);
