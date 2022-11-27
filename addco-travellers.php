@@ -44,17 +44,16 @@ include('includes/config.php');
             $gender=$_POST['gender'];
             $address=$_POST['address'];
             $email=$_POST['email'];
-            // echo ($package_id);
+//             echo ($package_id);
             $sql="SELECT * FROM package where package_id=$package_id";
             $query = $dbh->prepare($sql);
             $query->execute();
             $result=$query->fetch(PDO::FETCH_OBJ);
-
             $sql1="SELECT * FROM vehicle where Location_id=($result->Location_id) and booking_status=0 order by Vehicle_id limit 1";
             $query1 = $dbh->prepare($sql1);
             $query1->execute();
             $result1=$query1->fetch(PDO::FETCH_OBJ);
-            // echo($result1->Model);
+//             echo($result1->Model);
 
 $vehicle_id_int=(int)$result1->Vehicle_id;
             $sql5="INSERT into booking(Customer_name,Age,Phone_number,Gender,Email,Address,Num_travellers,Start_date,Status,
@@ -79,7 +78,7 @@ if($query2->rowCount() > 0)
 foreach($results2 as $result2)
 {	?>
 <?php
- echo ($result2->Place_name);
+// echo ($result2->Place_name);
 // echo ($result2->Place_id);
 // echo ($hotelrating);
 
@@ -88,7 +87,7 @@ $sql3="SELECT * FROM hotel where Place_id=$result2->Place_id and Hotel_rating=$h
             $query3 = $dbh->prepare($sql3);
             $query3->execute();
             $result3=$query3->fetch(PDO::FETCH_OBJ);
-            // echo ($result3->Hotel_name);
+//             echo ($result3->Hotel_name);
 // ?>
 <?php
 $sql4="SELECT * FROM room where Hotel_id=$result3->Hotel_id and booking_status = 0 and Occupancy=$travellers order by Room_id limit 1";

@@ -32,7 +32,7 @@ $query1 = $dbh->prepare($sql1);
 $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
-$numdays=1;
+$numdays=0;
 if($query1->rowCount() > 0)
 {
 foreach($results1 as $result1)
@@ -95,9 +95,21 @@ foreach($results2 as $result2)
                 <div>
                     <p class="text-lg font-medium text-gray-900 dark:text-white">Duration:  <span class="text-lg font-medium text-gray-700 dark:text-white"><?php echo $numdays?> days</span></p>
                     <p class="text-lg font-medium text-gray-900 dark:text-white">Places to visit:</p>
-                    <p class="text-lg font-medium text-gray-900 dark:text-white"><?php echo htmlentities($result3->Name);?></p>
-                    <p class="text-lg font-medium text-gray-900 dark:text-white">Description:</p>
-                    <p class="text-lg text-gray-900 dark:text-white"><?php echo htmlentities($result3->Description);?></p>
+                    <?php
+                    if($query3->rowCount() > 0)
+                    {
+                        foreach($results3 as $result3)
+                        {	?>
+                            <p class="text-lg font-medium text-gray-900 dark:text-white"><?php echo htmlentities($result3->Name);?></p>
+                            <p class="text-lg font-medium text-gray-900 dark:text-white">Description:</p>
+                            <p class="text-lg text-gray-900 dark:text-white"><?php echo htmlentities($result3->Description);?></p>
+                            <?php //echo htmlentities($result3->Name);?><!--<br>-->
+                            <?php //echo htmlentities($result3->Description);?><!--<br>-->
+                        <?php }} ?>
+
+
+
+
                 </div>
                 <br>
             </div>
@@ -150,21 +162,6 @@ foreach($results2 as $result2)
         </div>
         <input datepicker type="date" id="dateoftravel" name="dateoftravel"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
     </div>
-    <script type="text/javascript">
-        $(function(){
-            var dtToday = new Date();
-
-            var month = dtToday.getMonth() + 1;
-            var day = dtToday.getDate();
-            var year = dtToday.getFullYear();
-            if(month < 10)
-                month = '0' + month.toString();
-            if(day < 10)
-                day = '0' + day.toString();
-            var maxDate = year + '-' + month + '-' + day;
-            $('#inputdate').attr('min', maxDate);
-        });
-    </script>
 </div>
     <br>
     <p class="text-lg text-gray-900 dark:text-white">Personal Details</p>

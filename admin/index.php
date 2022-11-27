@@ -19,17 +19,10 @@ include('includes/config.php');
         Menu
     </button>
 </div>
-<div>
-    <?php
-    $query = $dbh->prepare('show tables');
-    $query->execute();
 
-    while($rows = $query->fetch(PDO::FETCH_ASSOC)){
-        var_dump($rows);
-    }
-    ?>
+<img src="../images/admin1.jpg">
 
-</div>
+
 <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 </body>
 </html>
