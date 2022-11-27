@@ -18,17 +18,17 @@ include('includes/config.php');
     </button>
 </div>
 <img src="../images/admin1.jpg">
-<div>
-    <?php
-    $query = $dbh->prepare('show tables');
-    $query->execute();
-
-    while($rows = $query->fetch(PDO::FETCH_ASSOC)){
-        var_dump($rows);
-    }
-    ?>
-
-</div>
+<!--<div>-->
+<!--    --><?php
+//    $query = $dbh->prepare('show tables');
+//    $query->execute();
+//
+//    while($rows = $query->fetch(PDO::FETCH_ASSOC)){
+//        var_dump($rows);
+//    }
+//    ?>
+<!---->
+<!--</div>-->
 <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 </body>
 </html>
